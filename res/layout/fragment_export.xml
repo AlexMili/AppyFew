@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_export"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="- Exporter votre vidéo -"
+            android:id="@+id/textView2"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Exportez votre vidéo sur votre mobile au format MP4."
+            android:id="@+id/textView3"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:id="@+id/btn_local_export"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:focusableInTouchMode="false"
+            android:src="@drawable/super1_icon_exportrose"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="- Exporter via YouTube -"
+            android:id="@+id/textView4"
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Exportez votre vidéo via YouTube en vous connectant à l'aide votre compte Gmail."
+            android:id="@+id/textView5"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:id="@+id/btn_youtube_export"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:src="@drawable/super1_icon_exportyoutube"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+
+</LinearLayout>
