@@ -1,0 +1,4 @@
+newUser={
+	"name": "name prop",
+	"adids": ["adid1","adid2","adid3"]
+}
