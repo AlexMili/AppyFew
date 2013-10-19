@@ -58,7 +58,7 @@ public class AdChanceUser extends Controller {
         // user(id);
     }
 
-    public static void deleteUser(Long id) {
+    public static void deleteUser(String id) {
         //User.findById(id).delete();
         // renderText("success");
     }

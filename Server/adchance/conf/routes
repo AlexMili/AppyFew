@@ -11,5 +11,13 @@ GET     /favicon.ico                            404
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 
+# adchance rest service
+
+GET     /adchance/user/{id}                          AdChanceUser.user
+POST    /adchance/user                               AdChanceUser.createUser
+PUT     /adchance/user/{id}                          AdChanceUser.updateUser
+DELETE  /adchance/user/{id}                          AdChanceUser.deleteUser
+
+
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}
