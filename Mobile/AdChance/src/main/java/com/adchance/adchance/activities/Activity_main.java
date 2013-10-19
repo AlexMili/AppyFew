@@ -13,6 +13,15 @@ import android.provider.Settings.Secure;
 
 import com.adchance.adchance.R;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.lang.reflect.Method;
 import java.util.Collection;
 import java.util.Iterator;
@@ -26,59 +35,67 @@ public class Activity_main extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String android_id = Secure.getString(getApplicationContext().getContentResolver(),
-                Secure.ANDROID_ID);
-
-        Log.d("ADCHANCE", "ANDROID ID : " + android_id);
-
-        TelephonyManager telephonyManager = (TelephonyManager)getSystemService(getApplicationContext().TELEPHONY_SERVICE);
-
-        Log.d("ADCHANCE","IMEI : "+telephonyManager.getDeviceId());
-        Log.d("ADCHANCE","IMSI : "+telephonyManager.getSubscriberId());
-        Log.d("ADCHANCE","SIM SERIAL : "+telephonyManager.getSimSerialNumber());
-        Log.d("ADCHANCE", "PHONE TYPE : " + telephonyManager.getPhoneType());
-
-        String serialnum = null;
-
+        /*HttpClient client = new DefaultHttpClient();
+        HttpGet request = new HttpGet("http://www.vogella.com");
+        HttpResponse response = null;
         try {
-            Class<?> c = Class.forName("android.os.SystemProperties");
-            Method get = c.getMethod("get", String.class, String.class );
-            serialnum = (String)(   get.invoke(c, "ro.serialno", "unknown" )  );
+            response = client.execute(request);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        catch (Exception ignored) { }
 
-        Log.d("ADCHANCE","SERIAL NUMBER : "+serialnum);
-
-        String macAddress=null;
-
-        WifiManager wifiManager =
-                ( WifiManager ) getSystemService(getApplicationContext().WIFI_SERVICE);
-        WifiInfo wInfo = wifiManager.getConnectionInfo();
-        macAddress = wInfo.getMacAddress();
-
-        if (macAddress != null)
-            macAddress = macAddress;
-
-        Log.d("ADCHANCE","MAC : "+macAddress);
-
-        UUID deviceUuid = new UUID(android_id.hashCode(), ((long)telephonyManager.getDeviceId().hashCode() << 32) | telephonyManager.getSimSerialNumber().hashCode());
-        String deviceId = deviceUuid.toString();
-
-        Log.d("ADCHANCE","UUID : "+deviceId);
-
-        PackageManager packageManager = getPackageManager();
-        Collection<ApplicationInfo> list = packageManager.getInstalledApplications(PackageManager.GET_META_DATA);
-
-        Iterator it = list.iterator();
-
-        while(it.hasNext()) {
-            ApplicationInfo info = (ApplicationInfo) it.next();
-
-            if(info != null)
-                Log.d("ADCHANCE", ""+info.packageName);
-            else
-                Log.d("ADCHANCE", "NO APP");
+// Get the response
+        BufferedReader rd = null;
+        try {
+            rd = new BufferedReader
+                    (new InputStreamReader(response.getEntity().getContent()));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
+        String line = "";
+        try {
+            while ((line = rd.readLine()) != null) {
+                Log.d("ADCHANCE", line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
+        InputStream test = getInputStreamFromUrl("http://www.google.fr/");
+        StringBuilder tras = inputStreamToString(test);
+
+        Log.d("ADCHANCE", "GET REQUEST : " +tras.toString());
+    }
+    public static InputStream getInputStreamFromUrl(String url) {
+        InputStream content = null;
+        try {
+            HttpClient httpclient = new DefaultHttpClient();
+            HttpResponse response = httpclient.execute(new HttpGet(url));
+            content = response.getEntity().getContent();
+        } catch (Exception e) {
+            Log.d("[GET REQUEST]", "Network exception", e);
+        }
+        return content;
+    }
+
+    private StringBuilder inputStreamToString(InputStream is) {
+        String line = "";
+        StringBuilder total = new StringBuilder();
+
+        // Wrap a BufferedReader around the InputStream
+        BufferedReader rd = new BufferedReader(new InputStreamReader(is));
+
+        // Read response until the end
+        try {
+            while ((line = rd.readLine()) != null) {
+                total.append(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Return full string
+        return total;
     }
 
 
