@@ -1,17 +1,22 @@
 package com.adchance.adchance.activities;
 
+import android.annotation.TargetApi;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.app.Activity;
+import android.os.StrictMode;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
 import android.provider.Settings.Secure;
 
 import com.adchance.adchance.R;
+import com.adchance.adchance.async.GetRequest;
+import com.adchance.adchance.utils.RequestUtils;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -60,44 +65,18 @@ public class Activity_main extends Activity {
             }
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
         InputStream test = getInputStreamFromUrl("http://www.google.fr/");
-        StringBuilder tras = inputStreamToString(test);
+        StringBuilder tras = null;*/
 
-        Log.d("ADCHANCE", "GET REQUEST : " +tras.toString());
+        GetRequest get = new GetRequest();
+        get.execute(new String[] { "http://www.google.com/" });
+
+        /*try { tras = RequestUtils.inputStreamToString(test); }
+        catch (IOException e) { e.printStackTrace(); }
+
+        Log.d("ADCHANCE", "GET REQUEST : " +tras.toString());*/
     }
-    public static InputStream getInputStreamFromUrl(String url) {
-        InputStream content = null;
-        try {
-            HttpClient httpclient = new DefaultHttpClient();
-            HttpResponse response = httpclient.execute(new HttpGet(url));
-            content = response.getEntity().getContent();
-        } catch (Exception e) {
-            Log.d("[GET REQUEST]", "Network exception", e);
-        }
-        return content;
-    }
-
-    private StringBuilder inputStreamToString(InputStream is) {
-        String line = "";
-        StringBuilder total = new StringBuilder();
-
-        // Wrap a BufferedReader around the InputStream
-        BufferedReader rd = new BufferedReader(new InputStreamReader(is));
-
-        // Read response until the end
-        try {
-            while ((line = rd.readLine()) != null) {
-                total.append(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        // Return full string
-        return total;
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
