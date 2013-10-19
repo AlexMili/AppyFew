@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<dimen name="Title">40sp</dimen>
+    <dimen name="loginwidth">250dp</dimen>
+    <dimen name="TextSizePadding">300dp</dimen>
+</resources>
