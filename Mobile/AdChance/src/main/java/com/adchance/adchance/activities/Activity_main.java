@@ -8,74 +8,58 @@ import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.app.Activity;
+import android.os.Environment;
 import android.os.StrictMode;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
-import android.provider.Settings.Secure;
 
 import com.adchance.adchance.R;
 import com.adchance.adchance.async.GetRequest;
-import com.adchance.adchance.utils.RequestUtils;
+import com.adchance.adchance.async.PostRequest;
+import com.adchance.adchance.json.UserData;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-
-import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.lang.reflect.Method;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.UUID;
+
 
 public class Activity_main extends Activity {
+
+    private String jsonFilePath = Environment.getExternalStorageDirectory().getAbsolutePath()+"/AdChance/user.json";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*HttpClient client = new DefaultHttpClient();
-        HttpGet request = new HttpGet("http://www.vogella.com");
-        HttpResponse response = null;
-        try {
-            response = client.execute(request);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-// Get the response
-        BufferedReader rd = null;
-        try {
-            rd = new BufferedReader
-                    (new InputStreamReader(response.getEntity().getContent()));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        String line = "";
-        try {
-            while ((line = rd.readLine()) != null) {
-                Log.d("ADCHANCE", line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        InputStream test = getInputStreamFromUrl("http://www.google.fr/");
-        StringBuilder tras = null;*/
 
         GetRequest get = new GetRequest();
         get.execute(new String[] { "http://www.google.com/" });
 
-        /*try { tras = RequestUtils.inputStreamToString(test); }
-        catch (IOException e) { e.printStackTrace(); }
+        PostRequest post = new PostRequest();
+        post.execute(new String[] { "http://www.htmlcodetutorial.com/cgi-bin/mycgi.pl" });
 
-        Log.d("ADCHANCE", "GET REQUEST : " +tras.toString());*/
+
+        /*JsonFactory jsonFactory = new JsonFactory();
+        JsonParser jp=null;
+
+        try {
+            jp = jsonFactory.createJsonParser(new File(jsonFilePath));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
+
+        ObjectMapper mapper = new ObjectMapper(); // can reuse, share globally
+
+        mapper.writeValue(new File(jsonFilePath), new UserData());
+
+        UserData user = null;
+
+        user = mapper.readValue(new File(jsonFilePath), UserData.class);
+
+        Log.d("ADCHANCE", "INFO : "+user.name);
     }
 
     @Override

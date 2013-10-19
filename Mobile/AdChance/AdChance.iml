@@ -79,6 +79,8 @@
     <orderEntry type="library" name="httpclient-cache-4.3.1" level="project" />
     <orderEntry type="library" name="httpcore-4.3" level="project" />
     <orderEntry type="library" name="httpmime-4.3.1" level="project" />
+    <orderEntry type="library" name="jackson-databind-2.2.3" level="project" />
+    <orderEntry type="library" name="jackson-annotations-2.2.3" level="project" />
   </component>
 </module>
 

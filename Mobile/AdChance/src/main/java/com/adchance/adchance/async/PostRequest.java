@@ -7,14 +7,21 @@ import android.util.Log;
 import com.adchance.adchance.utils.RequestUtils;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by alexandre on 19/10/13.
@@ -33,18 +40,30 @@ public class PostRequest extends AsyncTask<String, String, String>{
         InputStream content = null;
         HttpClient httpclient = null;
         HttpResponse response = null;
-
+        HttpPost httppost = null;
 
         for (String url : urls) {
-            try { httpclient = new DefaultHttpClient(); }
-            catch (Exception e) { Log.d("[GET REQUEST]", "Network exception - DEFAULT", e); }
 
-            try { response = httpclient.execute(new HttpGet(url)); }
-            catch (Exception e) { Log.d("[GET REQUEST]", "Network exception - EXECUTE", e); }
+            try { httpclient = new DefaultHttpClient(); }
+            catch (Exception e) { Log.d("[POST REQUEST]", "Network exception - DEFAULT", e); }
+
+            httppost = new HttpPost(url);
+
+            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
+            nameValuePairs.add(new BasicNameValuePair("id", "12345"));
+            nameValuePairs.add(new BasicNameValuePair("stringdata", "AndDev is Cool!"));
+
+            try { httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs)); }
+            catch (UnsupportedEncodingException e) { e.printStackTrace(); }
+
+
+            try { response = httpclient.execute(httppost); }
+            catch (Exception e) { Log.d("[POST REQUEST]", "Network exception - EXECUTE", e); }
 
             try { content = response.getEntity().getContent(); }
-            catch (Exception e) { Log.d("[GET REQUEST]", "Network exception - ENTITY", e); }
+            catch (Exception e) { Log.d("[POST REQUEST]", "Network exception - ENTITY", e); }
         }
+
         StringBuilder total = new StringBuilder();
         String line="";
 
