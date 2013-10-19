@@ -1,86 +1,66 @@
 package com.adchance.adchance.activities;
 
+import android.annotation.TargetApi;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.app.Activity;
+import android.os.Environment;
+import android.os.StrictMode;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
-import android.provider.Settings.Secure;
 
 import com.adchance.adchance.R;
+import com.adchance.adchance.async.GetRequest;
+import com.adchance.adchance.async.PostRequest;
+import com.adchance.adchance.json.UserData;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.lang.reflect.Method;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.UUID;
+import java.io.File;
+import java.io.IOException;
+
 
 public class Activity_main extends Activity {
+
+    private String jsonFilePath = Environment.getExternalStorageDirectory().getAbsolutePath()+"/AdChance/user.json";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String android_id = Secure.getString(getApplicationContext().getContentResolver(),
-                Secure.ANDROID_ID);
 
-        Log.d("ADCHANCE", "ANDROID ID : " + android_id);
+        GetRequest get = new GetRequest();
+        get.execute(new String[] { "http://www.google.com/" });
 
-        TelephonyManager telephonyManager = (TelephonyManager)getSystemService(getApplicationContext().TELEPHONY_SERVICE);
+        PostRequest post = new PostRequest();
+        post.execute(new String[] { "http://www.htmlcodetutorial.com/cgi-bin/mycgi.pl" });
 
-        Log.d("ADCHANCE","IMEI : "+telephonyManager.getDeviceId());
-        Log.d("ADCHANCE","IMSI : "+telephonyManager.getSubscriberId());
-        Log.d("ADCHANCE","SIM SERIAL : "+telephonyManager.getSimSerialNumber());
-        Log.d("ADCHANCE", "PHONE TYPE : " + telephonyManager.getPhoneType());
 
-        String serialnum = null;
+        /*JsonFactory jsonFactory = new JsonFactory();
+        JsonParser jp=null;
 
         try {
-            Class<?> c = Class.forName("android.os.SystemProperties");
-            Method get = c.getMethod("get", String.class, String.class );
-            serialnum = (String)(   get.invoke(c, "ro.serialno", "unknown" )  );
-        }
-        catch (Exception ignored) { }
+            jp = jsonFactory.createJsonParser(new File(jsonFilePath));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
 
-        Log.d("ADCHANCE","SERIAL NUMBER : "+serialnum);
+        ObjectMapper mapper = new ObjectMapper(); // can reuse, share globally
 
-        String macAddress=null;
+        mapper.writeValue(new File(jsonFilePath), new UserData());
 
-        WifiManager wifiManager =
-                ( WifiManager ) getSystemService(getApplicationContext().WIFI_SERVICE);
-        WifiInfo wInfo = wifiManager.getConnectionInfo();
-        macAddress = wInfo.getMacAddress();
+        UserData user = null;
 
-        if (macAddress != null)
-            macAddress = macAddress;
+        user = mapper.readValue(new File(jsonFilePath), UserData.class);
 
-        Log.d("ADCHANCE","MAC : "+macAddress);
-
-        UUID deviceUuid = new UUID(android_id.hashCode(), ((long)telephonyManager.getDeviceId().hashCode() << 32) | telephonyManager.getSimSerialNumber().hashCode());
-        String deviceId = deviceUuid.toString();
-
-        Log.d("ADCHANCE","UUID : "+deviceId);
-
-        PackageManager packageManager = getPackageManager();
-        Collection<ApplicationInfo> list = packageManager.getInstalledApplications(PackageManager.GET_META_DATA);
-
-        Iterator it = list.iterator();
-
-        while(it.hasNext()) {
-            ApplicationInfo info = (ApplicationInfo) it.next();
-
-            if(info != null)
-                Log.d("ADCHANCE", ""+info.packageName);
-            else
-                Log.d("ADCHANCE", "NO APP");
-        }
+        Log.d("ADCHANCE", "INFO : "+user.name);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
