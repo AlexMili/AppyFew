@@ -4,7 +4,20 @@
     <list default="true" id="3b12e5a9-f496-466b-9713-5fd24388ba49" name="Default" comment="" />
     <ignored path="proxy.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/my.mobfox.com.ftl" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382262471504" ignored="false" />
+    <file path="/my.mobfox.com.ftl" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382262562215" ignored="false" />
+    <file path="$PROJECT_DIR$/../adchance/app/controllers/AdChanceUser.java" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382263285046" ignored="false" />
+    <file path="/AdChanceUser.java" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382263280150" ignored="false" />
+    <file path="/Proxy.java" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382277179645" ignored="false" />
+    <file path="/api2.playhaven.com.tpl" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382264519063" ignored="false" />
+    <file path="$PROJECT_DIR$/../adchance/conf/routes" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382268704732" ignored="false" />
+    <file path="/routes" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382268700493" ignored="false" />
+    <file path="$PROJECT_DIR$/../adchance/app/controllers/Rtb.java" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382276210654" ignored="false" />
+    <file path="/Rtb.java" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382276107501" ignored="false" />
+    <file path="$PROJECT_DIR$/../adchance/public/bid.html" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382269840891" ignored="false" />
+    <file path="/bid.html" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382269839085" ignored="false" />
+    <file path="$PROJECT_DIR$/../adchance/app/controllers/Banner.java" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382271730426" ignored="false" />
+    <file path="/Banner.java" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382271725420" ignored="false" />
+    <file path="/pom.xml" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382273953025" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,21 +216,74 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Proxy.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Proxy.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/adchance/Proxy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="164" column="111" selection-start="8705" selection-end="8734" vertical-scroll-proportion="0.0">
+            <state line="104" column="103" selection-start="5132" selection-end="5132" vertical-scroll-proportion="0.5249501">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#9314#9329#0" expanded="true" />
+                <element signature="e#10721#10737#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="4" selection-start="1624" selection-end="1624" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="my.mobfox.com.ftl" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/adchance/my.mobfox.com.ftl">
+      <file leaf-file-name="proxy.iml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/proxy.iml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="54" selection-start="94" selection-end="94" vertical-scroll-proportion="0.03256705">
+            <state line="14" column="15" selection-start="754" selection-end="754" vertical-scroll-proportion="0.0">
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PLAYHEAVEN-640.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/captures/api2.playhaven.com/PLAYHEAVEN-640.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="api2.playhaven.com.ftl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/adchance/api2.playhaven.com.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="80" column="0" selection-start="2652" selection-end="2652" vertical-scroll-proportion="-52.36">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="my.mobfox.com.ftl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/adchance/my.mobfox.com.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="64" selection-start="104" selection-end="104" vertical-scroll-proportion="-0.68">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wv.inner-active.mobi.ftl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/adchance/wv.inner-active.mobi.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="0" selection-start="1615" selection-end="1615" vertical-scroll-proportion="40.72">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
           </provider>
         </entry>
       </file>
@@ -247,6 +313,9 @@
       <list>
         <option value="$PROJECT_DIR$/t/mobfox.tpl" />
         <option value="$PROJECT_DIR$/src/main/resources/adchance/my.mobfox.com.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/adchance/api2.playhaven.com.tpl" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/adchance/Proxy.java" />
       </list>
     </option>
   </component>
@@ -457,6 +526,56 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adproxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="captures" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www.moreadexchange.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adproxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="captures" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adproxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="captures" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api2.playhaven.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -477,6 +596,11 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fxkun_000\hackaton\code\AdChance\Server\adproxy\src\main\resources\adchance" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -597,7 +721,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24848485" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -732,17 +856,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/adchance/Proxy.java">
+    <entry file="file://$PROJECT_DIR$/captures/api2.playhaven.com/PLAYHEAVEN-640.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/adchance/api2.playhaven.com.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="111" selection-start="8705" selection-end="8734" vertical-scroll-proportion="0.0">
+        <state line="80" column="0" selection-start="2652" selection-end="2652" vertical-scroll-proportion="-52.36">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/adchance/my.mobfox.com.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="54" selection-start="94" selection-end="94" vertical-scroll-proportion="0.03256705">
+        <state line="1" column="64" selection-start="104" selection-end="104" vertical-scroll-proportion="-0.68">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/adchance/wv.inner-active.mobi.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="1615" selection-end="1615" vertical-scroll-proportion="40.72">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proxy.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="15" selection-start="754" selection-end="754" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="4" selection-start="1624" selection-end="1624" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/adchance/Proxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="103" selection-start="5132" selection-end="5132" vertical-scroll-proportion="0.5249501">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#9314#9329#0" expanded="true" />
+            <element signature="e#10721#10737#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

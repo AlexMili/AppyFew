@@ -1,13 +1,21 @@
 package adchance;
 
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBObject;
 import com.mongodb.util.JSON;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import io.netty.buffer.*;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.NameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URLEncodedUtils;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicNameValuePair;
 import org.littleshoot.proxy.*;
 import io.netty.handler.codec.http.*;
 
@@ -16,10 +24,7 @@ import org.littleshoot.proxy.impl.DefaultHttpProxyServer;
 import java.io.StringWriter;
 import java.net.URI;
 import java.nio.charset.Charset;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Logger;
 
 /**
@@ -39,6 +44,7 @@ import java.util.logging.Logger;
 public class Proxy {
     private static final Logger log = Logger.getAnonymousLogger();
 
+
     public static void main(String args[]) {
 
         HttpProxyServer server =
@@ -46,6 +52,7 @@ public class Proxy {
                         .withPort(8080)
                         .withListenOnAllAddresses(true)
                         .withAllowLocalOnly(false)
+                        .withIdleConnectionTimeout(5)
                         .withFiltersSource(new HttpFiltersSourceAdapter() {
                             public HttpFilters filterRequest(HttpRequest originalRequest) {
                                 // Check the originalRequest to see if we want to filter it
@@ -71,131 +78,64 @@ public class Proxy {
                                                 log.info("\tpath: " + path);
 
                                                 List<NameValuePair> params = URLEncodedUtils.parse(url, "utf8");
-                                                Map<String,String> urlParameters = new HashMap();
+                                                Map<String, String> urlParameters = new HashMap();
                                                 Iterator<NameValuePair> iParams = params.iterator();
 
-                                                while(iParams.hasNext()){
+                                                while (iParams.hasNext()) {
                                                     NameValuePair param = iParams.next();
-                                                    urlParameters.put(param.getName(),param.getValue());
+                                                    urlParameters.put(param.getName(), param.getValue());
                                                 }
 
-                                                System.out.println( JSON.serialize(urlParameters) );
+                                                System.out.println("PARAMS : \n" + JSON.serialize(urlParameters));
 
-
-                                                /// REFACTORING !!!!!!!!!
-                                                /// REFACTORING !!!!!!!!!
-                                                /// REFACTORING !!!!!!!!!
+                                                // 4 in a line
                                                 if (StringUtils.equals(host, "wv.inner-active.mobi")) {
-                                                    if (StringUtils.startsWith(path, "/simpleM2M/clientRequestWVBannerOnly")) {
-
-
-
-
-
-                                                        StringWriter responseContent = null;
-                                                        try {
-                                                            log.severe("\n ******************* REQUEST *********************\n");
-
-
-                                                            // Build the response
-
-                                                            final Configuration configuration = new Configuration();
-                                                            configuration.setClassForTemplateLoading(Proxy.class, ".");
-
-                                                            Template responseTemplate = configuration.getTemplate("wv.inner-active.mobi.ftl");
-
-                                                            // template parameters
-                                                            Map<String, String> responseParametersMap = new HashMap<String, String>();
-                                                            responseParametersMap.put("AD_A_HREF", "#"); //href
-
-                                                            String replacement = "http://lorempixel.com/640/100/";
-                                                            responseParametersMap.put("AD_IMG_SRC", replacement); // img
-
-
-                                                            responseContent = new StringWriter();
-                                                            responseTemplate.process(responseParametersMap, responseContent);
-                                                        } catch (Exception e) {
-                                                            log.severe("Template building : " + e.getMessage());
-                                                            e.printStackTrace();
-                                                        }
-
-                                                        // Content request response forge
-                                                        if (responseContent == null) {
-                                                            return null;
-                                                        }
-
-                                                        ByteBuf content = Unpooled.copiedBuffer(responseContent.toString(), Charset.forName("utf8"));
-
-                                                        DefaultFullHttpResponse response =
-                                                                new DefaultFullHttpResponse(
-                                                                        HttpVersion.HTTP_1_0,
-                                                                        HttpResponseStatus.OK,
-                                                                        content);
-
-                                                        response.headers().add("Access-Control-Allow-Origin", "*");
-                                                        response.headers().add("Content-Type", "text/html;charset=UTF-8");
-
-                                                        return response;
-
+                                                    if (false && StringUtils.startsWith(path, "/simpleM2M/clientRequestWVBannerOnly")) {
+                                                        return getAdRequestResponse(
+                                                                "wv.inner-active.mobi.ftl",
+                                                                "http://lorempixel.com/320/50/",
+                                                                "#"
+                                                        );
                                                     }
-                                                }
-
-
-                                                /// REFACTORING !!!!!!!!!
-                                                /// REFACTORING !!!!!!!!!
-                                                /// REFACTORING !!!!!!!!!
-                                                else if (StringUtils.equals(host, "my.mobfox.com")) {
+                                                    // BenjBanana
+                                                } else if (StringUtils.equals(host, "my.mobfox.com")) {
                                                     if (StringUtils.startsWith(path, "/request.php")) {
-                                                        StringWriter responseContent = null;
-                                                        try {
-                                                            log.severe("\n ******************* REQUEST *********************\n");
-
-
-                                                            // Build the response
-
-                                                            final Configuration configuration = new Configuration();
-                                                            configuration.setClassForTemplateLoading(Proxy.class, ".");
-
-                                                            Template responseTemplate = configuration.getTemplate("my.mobfox.com.ftl");
-
-                                                            // template parameters
-                                                            Map<String, String> responseParametersMap = new HashMap<String, String>();
-                                                            responseParametersMap.put("AD_A_HREF", "#"); //href
-
-                                                            String replacement = "http://lorempixel.com/300/50/";
-                                                            responseParametersMap.put("AD_IMG_SRC", replacement); // img
-
-
-                                                            responseContent = new StringWriter();
-                                                            responseTemplate.process(responseParametersMap, responseContent);
-
-                                                        } catch (Exception e) {
-                                                            log.severe("Template building : " + e.getMessage());
-                                                            e.printStackTrace();
+                                                        return getAdRequestResponse(
+                                                                "my.mobfox.com.ftl",
+                                                                "http://192.168.230.33:9000/public/tech.jpg",
+                                                                "#"
+                                                        );
+                                                        /*
+                                                        DBObject rtbResponse = rtbRequest(JSON.serialize(urlParameters));
+                                                        Logger.getAnonymousLogger().info(JSON.serialize(rtbResponse));
+                                                        if (Integer.parseInt(rtbResponse.get("bid").toString()) > 0) {
+                                                            return getAdRequestResponse(
+                                                                    "my.mobfox.com.ftl",
+                                                                    rtbResponse.get("imgsrc").toString(), //lorempixel.com/300/50/",
+                                                                    rtbResponse.get("ahref").toString()
+                                                            );
                                                         }
-
-                                                        // Content request response forge
-                                                        if (responseContent == null) {
-                                                            return null;
-                                                        }
-
-                                                        ByteBuf content = Unpooled.copiedBuffer(responseContent.toString(), Charset.forName("utf8"));
-
-                                                        DefaultFullHttpResponse response =
-                                                                new DefaultFullHttpResponse(
-                                                                        HttpVersion.HTTP_1_0,
-                                                                        HttpResponseStatus.OK,
-                                                                        content);
-
-                                                        response.headers().add("Access-Control-Allow-Origin", "*");
-                                                        response.headers().add("Content-Type", "text/html;charset=UTF-8");
-
-                                                        return response;
-
+*/
+                                                    }
+                                                } else if (StringUtils.equals(host, "api2.playhaven.com")) {
+                                                    if (StringUtils.startsWith(path, "/v3/publisher/content/")) {
+                                                        return getAdRequestResponse(
+                                                                "api2.playhaven.com.ftl",
+                                                                "http://lorempixel.com/640/560/",
+                                                                "#"
+                                                        );
+                                                    }
+                                                } else if (StringUtils.equals(host, "my.mobfox.com")) {
+                                                    if (StringUtils.startsWith(path, "/request.php")) {
+                                                        return getAdRequestResponse(
+                                                                "my.mobfox.com.ftl",
+                                                                "http://lorempixel.com/300/50/",
+                                                                "#"
+                                                        );
                                                     }
                                                 }
 
-
+                                                return null;
                                             }
                                             // TODO: implement your filtering here
                                             return null;
@@ -222,10 +162,80 @@ public class Proxy {
                         }
 
                         )
-            .
-
-    start();
+            .start();
 }
+
+    private static DBObject rtbRequest(String params) {
+        try {
+        String urlName = "http://localhost:9000/rtb/bid";
+        CloseableHttpClient httpclient = HttpClients.createDefault();
+
+        try {
+            HttpPost httpPost = new HttpPost(urlName);
+            List <NameValuePair> nvps = new ArrayList<NameValuePair>();
+            nvps.add(new BasicNameValuePair("request", JSON.serialize(params)));
+            httpPost.setEntity(new UrlEncodedFormEntity(nvps));
+            CloseableHttpResponse response2 = httpclient.execute(httpPost);
+            log.info(response2.getEntity().getContent().toString());
+            return (DBObject) JSON.parse( response2.getEntity().getContent().toString() );
+
+        } catch (Exception e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new BasicDBObject().append("bid",1)
+                .append("imgsrc","http://193.168.230.33:9000/public/home.jpg")
+                .append("ahref","#")
+                ;
+    }
+
+    static DefaultFullHttpResponse getAdRequestResponse(String templateName, String adImg, String adUrl) {
+        log.info("\t********************* " + templateName);
+        StringWriter responseContent = null;
+        try {
+            // Build the response
+
+            final Configuration configuration = new Configuration();
+            configuration.setClassForTemplateLoading(Proxy.class, ".");
+
+            Template responseTemplate = configuration.getTemplate(templateName);
+
+            // template parameters
+            Map<String, String> responseParametersMap = new HashMap<String, String>();
+            responseParametersMap.put("AD_A_HREF", adUrl); //href
+
+            responseParametersMap.put("AD_IMG_SRC", adImg); // img
+
+
+            responseContent = new StringWriter();
+            responseTemplate.process(responseParametersMap, responseContent);
+        } catch (Exception e) {
+            log.severe("Template building : " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        // Content request response forge
+        if (responseContent == null) {
+            return null;
+        }
+
+        ByteBuf content = Unpooled.copiedBuffer(responseContent.toString(), Charset.forName("utf8"));
+
+        DefaultFullHttpResponse response =
+                new DefaultFullHttpResponse(
+                        HttpVersion.HTTP_1_0,
+                        HttpResponseStatus.OK,
+                        content);
+
+        response.headers().add("Access-Control-Allow-Origin", "*");
+        response.headers().add("Content-Type", "text/html;charset=UTF-8");
+
+        return response;
+
+    }
     /*
 
     [ ] Benj Banana
@@ -242,7 +252,7 @@ public class Proxy {
 
     [ ] IPAD : 4 in a line
     wv.inner-active.mobi
-    GET /simpleM2M/clientRequestWVBannerOnly?aid=ZingMagic_ZingMagic_FialV_iOS_iPhone&v=2.1.0-iPad-2.0.1.7&po=947&f=628&k=kids,sports,games,spa,phone,camera,shoes,clothes,jewellery,cars,gadgets,food,resturants,offers&cid=17051722021&cuid=17019101379&w=1024&h=768&nt=WIFI&t=1382145376
+        GET /simpleM2M/clientRequestWVBannerOnly?aid=ZingMagic_ZingMagic_FialV_iOS_iPhone&v=2.1.0-iPad-2.0.1.7&po=947&f=628&k=kids,sports,games,spa,phone,camera,shoes,clothes,jewellery,cars,gadgets,food,resturants,offers&cid=17051722021&cuid=17019101379&w=1024&h=768&nt=WIFI&t=1382145376
     RESPONSE HEADER
         HTTP/1.1 200 OK
         Access-Control-Allow-Origin: *

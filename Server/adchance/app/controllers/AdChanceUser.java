@@ -1,20 +1,14 @@
 package controllers;
 
 
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
 import com.mongodb.*;
 import com.mongodb.util.JSON;
 import org.apache.commons.collections.MapUtils;
-import org.apache.commons.io.IOUtils;
-import play.*;
 import play.mvc.*;
 
 import models.*;
 
 import java.io.IOException;
-import java.io.StringWriter;
 import java.net.UnknownHostException;
 
 public class AdChanceUser extends Controller {
@@ -64,6 +58,11 @@ public class AdChanceUser extends Controller {
     }
 
     public static void user(String id)  {
+        DBObject dbUserId = new BasicDBObject().append("_id", id);
+        DBObject user = users.findOne(dbUserId);
+        if (user == null)
+            user = new BasicDBObject();
+        renderJSON(user);
         // User user = User.findById(id);
         // render(user);
     }

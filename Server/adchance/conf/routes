@@ -15,9 +15,14 @@ GET     /public/                                staticDir:public
 
 GET     /adchance/user/{id}                          AdChanceUser.user
 POST    /adchance/user                               AdChanceUser.createUser
+GET     /adchance/user                               AdChanceUser.createUser
+
 PUT     /adchance/user/{id}                          AdChanceUser.updateUser
 DELETE  /adchance/user/{id}                          AdChanceUser.deleteUser
 
+# rtb server
+
+POST    /rtb/bidrequest                              Rtb.bid
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}
