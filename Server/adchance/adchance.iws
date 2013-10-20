@@ -12,6 +12,21 @@
     <file path="/user.html" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382218482771" ignored="false" />
     <file path="$USER_HOME$/training/w1/hw1-4 - playground/M101J.iws" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382192960856" ignored="false" />
     <file path="/user.json" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382218633969" ignored="false" />
+    <file path="$PROJECT_DIR$/../readme.md" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382219629134" ignored="false" />
+    <file path="$PROJECT_DIR$/../adproxy/src/main/java/adchance/proxy.java" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382219782301" ignored="false" />
+    <file path="/proxy.java" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382230394090" ignored="false" />
+    <file path="$PROJECT_DIR$/../adproxy/src/main/java/adchance/Proxy.java" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382231002465" ignored="false" />
+    <file path="$PROJECT_DIR$/../adproxy/src/main/java/adchance/AdResponseBuilder.java" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382222308377" ignored="false" />
+    <file path="/Proxy.java" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382230362867" ignored="false" />
+    <file path="$PROJECT_DIR$/../adproxy/captures/my.mobfox.com" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382223797512" ignored="false" />
+    <file path="$PROJECT_DIR$/../adproxy/captures/www.moreadexchange.com" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382223985369" ignored="false" />
+    <file path="$PROJECT_DIR$/../adproxy/captures/api2.playhaven.com" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382224122978" ignored="false" />
+    <file path="$PROJECT_DIR$/../adproxy/captures/wv.inner-active.mobi/wv.inner-active.mobi.ftl" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382227409647" ignored="false" />
+    <file path="/wv.inner-active.mobi.ftl" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382227409647" ignored="false" />
+    <file path="$PROJECT_DIR$/../adproxy/src/main/java/com/tengen/Week1Homework4Original.java" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382227543427" ignored="false" />
+    <file path="/Week1Homework4Original.java" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382227543427" ignored="false" />
+    <file path="$PROJECT_DIR$/../adproxy/src/main/resources/adchance/my.mobfox.com.ftl" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382230854837" ignored="false" />
+    <file path="/my.mobfox.com.ftl" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382230673715" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,10 +95,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AdChanceUser.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AdChanceUser.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/AdChanceUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="49" selection-start="1190" selection-end="1198" vertical-scroll-proportion="0.0">
+            <state line="43" column="49" selection-start="1190" selection-end="1198" vertical-scroll-proportion="0.4">
               <folding />
             </state>
           </provider>
@@ -116,10 +131,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.json" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="user.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../user.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="471" vertical-scroll-proportion="0.0">
+            <state line="13" column="1" selection-start="471" selection-end="471" vertical-scroll-proportion="-8.5">
               <folding />
             </state>
           </provider>
@@ -572,13 +587,6 @@
         <state line="4" column="9" selection-start="66" selection-end="66" vertical-scroll-proportion="0.12142857" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="22" selection-start="322" selection-end="322" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../Mobile/Mobile.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -603,13 +611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AdChanceUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="49" selection-start="1190" selection-end="1198" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conf/routes">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="53" selection-start="535" selection-end="535" vertical-scroll-proportion="0.0">
@@ -626,7 +627,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../user.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="471" vertical-scroll-proportion="0.0">
+        <state line="13" column="1" selection-start="471" selection-end="471" vertical-scroll-proportion="-8.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="22" selection-start="322" selection-end="322" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AdChanceUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="49" selection-start="1190" selection-end="1198" vertical-scroll-proportion="0.4">
           <folding />
         </state>
       </provider>

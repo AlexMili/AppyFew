@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<request type="textAd"><htmlString><a href="${AD_A_HREF}" target="_top" style="text-decoration:none;"> <img border="0" src="${AD_IMG_SRC}" alt=" " height="50" width="300"/> </a> <style>body{margin:0}</style> <img src="#" width="1" height="1" style="display:none;" /><img style="position:absolute; left: -10000px;" width="1" height="1" src="#"/></htmlString><clicktype>safari</clicktype><clickurl>${AD_A_HREF}</clickurl><urltype>link</urltype><refresh>60</refresh><scale>no</scale><skippreflight>yes</skippreflight></request>
