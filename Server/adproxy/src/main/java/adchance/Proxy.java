@@ -1,10 +1,13 @@
 package adchance;
 
 
+import com.mongodb.util.JSON;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import io.netty.buffer.*;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.utils.URLEncodedUtils;
 import org.littleshoot.proxy.*;
 import io.netty.handler.codec.http.*;
 
@@ -14,6 +17,8 @@ import java.io.StringWriter;
 import java.net.URI;
 import java.nio.charset.Charset;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
@@ -63,13 +68,30 @@ public class Proxy {
                                                 String path = url.getPath();
 
                                                 log.info("\thost: " + host);
+                                                log.info("\tpath: " + path);
+
+                                                List<NameValuePair> params = URLEncodedUtils.parse(url, "utf8");
+                                                Map<String,String> urlParameters = new HashMap();
+                                                Iterator<NameValuePair> iParams = params.iterator();
+
+                                                while(iParams.hasNext()){
+                                                    NameValuePair param = iParams.next();
+                                                    urlParameters.put(param.getName(),param.getValue());
+                                                }
+
+                                                System.out.println( JSON.serialize(urlParameters) );
+
 
                                                 /// REFACTORING !!!!!!!!!
                                                 /// REFACTORING !!!!!!!!!
                                                 /// REFACTORING !!!!!!!!!
                                                 if (StringUtils.equals(host, "wv.inner-active.mobi")) {
-                                                    log.info("\tpath: " + path);
                                                     if (StringUtils.startsWith(path, "/simpleM2M/clientRequestWVBannerOnly")) {
+
+
+
+
+
                                                         StringWriter responseContent = null;
                                                         try {
                                                             log.severe("\n ******************* REQUEST *********************\n");
@@ -80,7 +102,7 @@ public class Proxy {
                                                             final Configuration configuration = new Configuration();
                                                             configuration.setClassForTemplateLoading(Proxy.class, ".");
 
-                                                            Template responseTemplate = configuration.getTemplate ("wv.inner-active.mobi.ftl");
+                                                            Template responseTemplate = configuration.getTemplate("wv.inner-active.mobi.ftl");
 
                                                             // template parameters
                                                             Map<String, String> responseParametersMap = new HashMap<String, String>();
@@ -119,22 +141,10 @@ public class Proxy {
                                                 }
 
 
-
-
-
-
-
-
-
-
-
-
-
                                                 /// REFACTORING !!!!!!!!!
                                                 /// REFACTORING !!!!!!!!!
                                                 /// REFACTORING !!!!!!!!!
                                                 else if (StringUtils.equals(host, "my.mobfox.com")) {
-                                                    log.info("\tpath: " + path);
                                                     if (StringUtils.startsWith(path, "/request.php")) {
                                                         StringWriter responseContent = null;
                                                         try {
@@ -186,44 +196,32 @@ public class Proxy {
                                                 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
                                             }
-                                        // TODO: implement your filtering here
-                                        return null;
-                                    }
+                                            // TODO: implement your filtering here
+                                            return null;
+                                        }
 
-                                    @Override
-                                    public HttpResponse requestPost (HttpObject httpObject){
-                                        // TODO: implement your filtering here
-                                        return null;
-                                    }
+                                        @Override
+                                        public HttpResponse requestPost(HttpObject httpObject) {
+                                            // TODO: implement your filtering here
+                                            return null;
+                                        }
 
-                                    @Override
-                                    public void responsePre (HttpObject httpObject){
-                                        // TODO: implement your filtering here
-                                    }
+                                        @Override
+                                        public void responsePre(HttpObject httpObject) {
+                                            // TODO: implement your filtering here
+                                        }
 
-                                    @Override
-                                    public void responsePost (HttpObject httpObject){
-                                        // TODO: implement your filtering here
-                                    }
-                                } ;
+                                        @Override
+                                        public void responsePost(HttpObject httpObject) {
+                                            // TODO: implement your filtering here
+                                        }
+                                    };
+                                }
                             }
                         }
-    }
 
-    )
+                        )
             .
 
     start();
