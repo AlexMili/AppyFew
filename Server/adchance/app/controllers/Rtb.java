@@ -37,15 +37,15 @@ public class Rtb extends Controller {
         System.out.println(String.format(format,args));
     }
 
-
     private static List<String> likes = Arrays.asList("mode","show","garden","tech","travel");
 
+    private static String baseImgAddr = "http://192.168.230.33:9000/public/";
     private static Map<String, Banner> bannersByLike= new HashMap(){{
-        put("mode",new Banner("http://faceplouc.com/adchance/mode.jpg","#"));
-        put("show",new Banner("http://faceplouc.com/adchance/show.jpg","#"));
-        put("garden",new Banner("http://faceplouc.com/adchance/garden.jpg","#"));
-        put("tech",new Banner("http://faceplouc.com/adchance/tech.jpg","#"));
-        put("travel",new Banner("http://faceplouc.com/adchance/travel.jpg","#"));
+        put("mode",new Banner(baseImgAddr + "mode.jpg","#"));
+        put("show",new Banner(baseImgAddr + "show.jpg","#"));
+        put("garden",new Banner(baseImgAddr + "garden.jpg","#"));
+        put("tech",new Banner(baseImgAddr + "tech.jpg","#"));
+        put("travel",new Banner(baseImgAddr + "travel.jpg","#"));
     }
     };
 

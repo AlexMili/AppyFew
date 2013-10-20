@@ -8,6 +8,7 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import io.netty.buffer.*;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -16,11 +17,14 @@ import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
 import org.littleshoot.proxy.*;
 import io.netty.handler.codec.http.*;
 
 import org.littleshoot.proxy.impl.DefaultHttpProxyServer;
 
+import java.io.BufferedOutputStream;
+import java.io.StringReader;
 import java.io.StringWriter;
 import java.net.URI;
 import java.nio.charset.Charset;
@@ -66,16 +70,16 @@ public class Proxy {
                                         public HttpResponse requestPre(HttpObject httpObject) {
 
                                             if (httpObject instanceof HttpRequest) {
-                                                log.info("REQUEST");
+  //                                              log.info("REQUEST");
                                                 HttpRequest httpRequest = (HttpRequest) httpObject;
-                                                log.info("\turl: " + httpRequest.getUri());
+  //                                              log.info("\turl: " + httpRequest.getUri());
 
                                                 URI url = URI.create(httpRequest.getUri()); // url decoding
                                                 String host = url.getHost();
                                                 String path = url.getPath();
 
-                                                log.info("\thost: " + host);
-                                                log.info("\tpath: " + path);
+    //                                            log.info("\thost: " + host);
+      //                                          log.info("\tpath: " + path);
 
                                                 List<NameValuePair> params = URLEncodedUtils.parse(url, "utf8");
                                                 Map<String, String> urlParameters = new HashMap();
@@ -86,7 +90,7 @@ public class Proxy {
                                                     urlParameters.put(param.getName(), param.getValue());
                                                 }
 
-                                                System.out.println("PARAMS : \n" + JSON.serialize(urlParameters));
+                                                // System.out.println("PARAMS : \n" + JSON.serialize(urlParameters));
 
                                                 // 4 in a line
                                                 if (StringUtils.equals(host, "wv.inner-active.mobi")) {
@@ -100,14 +104,9 @@ public class Proxy {
                                                     // BenjBanana
                                                 } else if (StringUtils.equals(host, "my.mobfox.com")) {
                                                     if (StringUtils.startsWith(path, "/request.php")) {
-                                                        return getAdRequestResponse(
-                                                                "my.mobfox.com.ftl",
-                                                                "http://192.168.230.33:9000/public/tech.jpg",
-                                                                "#"
-                                                        );
-                                                        /*
+
                                                         DBObject rtbResponse = rtbRequest(JSON.serialize(urlParameters));
-                                                        Logger.getAnonymousLogger().info(JSON.serialize(rtbResponse));
+                                                        Logger.getAnonymousLogger().info("RTBRESPONSE --- " + JSON.serialize(rtbResponse));
                                                         if (Integer.parseInt(rtbResponse.get("bid").toString()) > 0) {
                                                             return getAdRequestResponse(
                                                                     "my.mobfox.com.ftl",
@@ -115,7 +114,7 @@ public class Proxy {
                                                                     rtbResponse.get("ahref").toString()
                                                             );
                                                         }
-*/
+
                                                     }
                                                 } else if (StringUtils.equals(host, "api2.playhaven.com")) {
                                                     if (StringUtils.startsWith(path, "/v3/publisher/content/")) {
@@ -173,11 +172,24 @@ public class Proxy {
         try {
             HttpPost httpPost = new HttpPost(urlName);
             List <NameValuePair> nvps = new ArrayList<NameValuePair>();
-            nvps.add(new BasicNameValuePair("request", JSON.serialize(params)));
+            String jsonrtb = JSON.serialize(params);
+            nvps.add(new BasicNameValuePair("request", jsonrtb));
             httpPost.setEntity(new UrlEncodedFormEntity(nvps));
-            CloseableHttpResponse response2 = httpclient.execute(httpPost);
-            log.info(response2.getEntity().getContent().toString());
-            return (DBObject) JSON.parse( response2.getEntity().getContent().toString() );
+            System.out.println("");
+            log.info("--------------------------------------------");
+            log.info("RTB REQUEST to   : " + urlName);
+            log.info("RTB REQUEST DATA : " + jsonrtb);
+
+            long start = System.currentTimeMillis();
+            CloseableHttpResponse response = httpclient.execute(httpPost);
+            long stop = System.currentTimeMillis();
+
+            HttpEntity entity = response.getEntity();
+            String responseBody = EntityUtils.toString(entity,Charset.forName("utf8"));
+
+            log.info("RTB RESPONSE : " + responseBody);
+            //log.info("RTB RESPONSE RECEIVED IN " + (stop - start) + "ms");
+            return (DBObject) JSON.parse( responseBody );
 
         } catch (Exception e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
@@ -193,7 +205,7 @@ public class Proxy {
     }
 
     static DefaultFullHttpResponse getAdRequestResponse(String templateName, String adImg, String adUrl) {
-        log.info("\t********************* " + templateName);
+        // log.info("\t********************* " + templateName);
         StringWriter responseContent = null;
         try {
             // Build the response
@@ -213,7 +225,7 @@ public class Proxy {
             responseContent = new StringWriter();
             responseTemplate.process(responseParametersMap, responseContent);
         } catch (Exception e) {
-            log.severe("Template building : " + e.getMessage());
+            //log.severe("Template building : " + e.getMessage());
             e.printStackTrace();
         }
 

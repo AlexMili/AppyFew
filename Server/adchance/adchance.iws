@@ -15,9 +15,9 @@
     <file path="$PROJECT_DIR$/../readme.md" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382219629134" ignored="false" />
     <file path="$PROJECT_DIR$/../adproxy/src/main/java/adchance/proxy.java" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382219782301" ignored="false" />
     <file path="/proxy.java" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382230394090" ignored="false" />
-    <file path="$PROJECT_DIR$/../adproxy/src/main/java/adchance/Proxy.java" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382277940514" ignored="false" />
+    <file path="$PROJECT_DIR$/../adproxy/src/main/java/adchance/Proxy.java" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382280775441" ignored="false" />
     <file path="$PROJECT_DIR$/../adproxy/src/main/java/adchance/AdResponseBuilder.java" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382222308377" ignored="false" />
-    <file path="/Proxy.java" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382277179645" ignored="false" />
+    <file path="/Proxy.java" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382280661239" ignored="false" />
     <file path="$PROJECT_DIR$/../adproxy/captures/my.mobfox.com" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382223797512" ignored="false" />
     <file path="$PROJECT_DIR$/../adproxy/captures/www.moreadexchange.com" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382223985369" ignored="false" />
     <file path="$PROJECT_DIR$/../adproxy/captures/api2.playhaven.com" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382224122978" ignored="false" />
@@ -31,7 +31,7 @@
     <file path="$PROJECT_DIR$/../adproxy/t/mobfox.tpl" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382260996151" ignored="false" />
     <file path="$PROJECT_DIR$/../adproxy/src/main/resources/adchance/api2.playhaven.com.tpl" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382264519617" ignored="false" />
     <file path="/api2.playhaven.com.tpl" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382264519063" ignored="false" />
-    <file path="/Rtb.java" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382276107501" ignored="false" />
+    <file path="/Rtb.java" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382279775960" ignored="false" />
     <file path="/bid.html" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382269839085" ignored="false" />
     <file path="/Banner.java" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382271725420" ignored="false" />
     <file path="$PROJECT_DIR$/../adproxy/pom.xml" changelist="07d9293a-da02-4357-8854-74489b54a825" time="1382273965180" ignored="false" />
@@ -127,7 +127,7 @@
       <file leaf-file-name="Rtb.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/Rtb.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="1073" selection-end="1073" vertical-scroll-proportion="0.7589286">
+            <state line="27" column="46" selection-start="732" selection-end="732" vertical-scroll-proportion="0.15">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -731,7 +731,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/Rtb.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1073" selection-end="1073" vertical-scroll-proportion="0.7589286">
+        <state line="27" column="46" selection-start="732" selection-end="732" vertical-scroll-proportion="0.15">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

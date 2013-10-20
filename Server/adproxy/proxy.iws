@@ -7,12 +7,12 @@
     <file path="/my.mobfox.com.ftl" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382262562215" ignored="false" />
     <file path="$PROJECT_DIR$/../adchance/app/controllers/AdChanceUser.java" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382263285046" ignored="false" />
     <file path="/AdChanceUser.java" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382263280150" ignored="false" />
-    <file path="/Proxy.java" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382277179645" ignored="false" />
+    <file path="/Proxy.java" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382280661239" ignored="false" />
     <file path="/api2.playhaven.com.tpl" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382264519063" ignored="false" />
     <file path="$PROJECT_DIR$/../adchance/conf/routes" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382268704732" ignored="false" />
     <file path="/routes" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382268700493" ignored="false" />
-    <file path="$PROJECT_DIR$/../adchance/app/controllers/Rtb.java" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382276210654" ignored="false" />
-    <file path="/Rtb.java" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382276107501" ignored="false" />
+    <file path="$PROJECT_DIR$/../adchance/app/controllers/Rtb.java" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382280009209" ignored="false" />
+    <file path="/Rtb.java" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382279775960" ignored="false" />
     <file path="$PROJECT_DIR$/../adchance/public/bid.html" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382269840891" ignored="false" />
     <file path="/bid.html" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382269839085" ignored="false" />
     <file path="$PROJECT_DIR$/../adchance/app/controllers/Banner.java" changelist="3b12e5a9-f496-466b-9713-5fd24388ba49" time="1382271730426" ignored="false" />
@@ -219,12 +219,21 @@
       <file leaf-file-name="Proxy.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/adchance/Proxy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="103" selection-start="5132" selection-end="5132" vertical-scroll-proportion="0.5249501">
+            <state line="178" column="67" selection-start="9326" selection-end="9326" vertical-scroll-proportion="0.25855514">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#9314#9329#0" expanded="true" />
-                <element signature="e#10721#10737#0" expanded="true" />
+                <element signature="e#9021#9036#0" expanded="true" />
+                <element signature="e#10965#10981#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CloseableHttpResponse.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.3/httpclient-4.3.jar!/org/apache/http/client/methods/CloseableHttpResponse.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="68" selection-start="228" selection-end="228" vertical-scroll-proportion="-3.4">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -404,6 +413,86 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="External Libraries" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="httpclient-4.3.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="httpclient-4.3.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="httpclient-4.3.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="methods" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="httpclient-4.3.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -902,13 +991,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar!/org/apache/http/HttpResponse.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="21" selection-start="140" selection-end="141" vertical-scroll-proportion="0.09922179">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.3/httpclient-4.3.jar!/org/apache/http/client/methods/CloseableHttpResponse.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="68" selection-start="228" selection-end="228" vertical-scroll-proportion="-3.4">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/adchance/Proxy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="103" selection-start="5132" selection-end="5132" vertical-scroll-proportion="0.5249501">
+        <state line="178" column="67" selection-start="9326" selection-end="9326" vertical-scroll-proportion="0.25855514">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9314#9329#0" expanded="true" />
-            <element signature="e#10721#10737#0" expanded="true" />
+            <element signature="e#9021#9036#0" expanded="true" />
+            <element signature="e#10965#10981#0" expanded="true" />
           </folding>
         </state>
       </provider>
