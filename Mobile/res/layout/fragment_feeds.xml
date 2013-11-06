@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+
+    <!--<EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:background="#FFF"
+        android:padding="5dp"
+        android:hint="Search by tags"
+        android:layout_margin="10dp"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NEWEST"
+            android:id="@+id/button"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:textColor="#050505"
+            android:background="#cc5d5a"
+            android:layout_marginRight="4dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="POPULAR"
+            android:id="@+id/button2"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:background="#aa5050"
+            android:textColor="#f6685c"
+            android:layout_marginLeft="4dp" />
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LIST FEED SOON"
+        android:id="@+id/textView"
+        android:layout_gravity="center"
+        android:textColor="#ffffff"
+        android:layout_marginTop="25dp" />-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Avec AppyFew..."
+        android:id="@+id/textView"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="20dp"
+        android:textColor="#000000" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prenez le contrôle de votre mobile et accédez"
+        android:id="@+id/blabla"
+        android:layout_gravity="center"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:textSize="14dp"
+        android:textColor="#000000" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="aux meilleurs plans des ventes privées"
+        android:id="@+id/blabla"
+        android:layout_gravity="center"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:textSize="14dp"
+        android:textColor="#000000" />
+    <!--<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ventes privées"
+        android:id="@+id/blabla"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:textSize="15dp"
+        android:textColor="#000000" />-->
+    <Button
+        android:id="@+id/btn_generate"
+        style="@style/buttonStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:text="Pré-remplir"
+        android:textColor="#ffffff"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp" />
+    <Switch
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:text="Mode et Accessoires"
+        android:id="@+id/mode"
+        android:layout_gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:thumb="@drawable/switch_inner_holo_light"
+        android:track="@drawable/switch_track_holo_light"
+        android:textOn="Oui"
+        android:textOff="Non"
+        android:textColor="#ffffff"
+        android:background="#2bc2bb"
+        android:layout_marginTop="25dp"/>
+    <Switch
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:text="Maison et Jardin"
+        android:id="@+id/garden"
+        android:layout_gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:thumb="@drawable/switch_inner_holo_light"
+        android:track="@drawable/switch_track_holo_light"
+        android:textOn="Oui"
+        android:textOff="Non"
+        android:textColor="#ffffff"
+        android:textColorLink="#000000"
+        android:textColorHint="#000000"
+        android:background="#51a351"/>
+    <Switch
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:text="High Tech"
+        android:id="@+id/tech"
+        android:layout_gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:thumb="@drawable/switch_inner_holo_light"
+        android:track="@drawable/switch_track_holo_light"
+        android:textOn="Oui"
+        android:textOff="Non"
+        android:textColor="#ffffff"
+        android:background="#ffff7b74"/>
+    <Switch
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:text="Voyage"
+        android:id="@+id/travel"
+        android:layout_gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:thumb="@drawable/switch_inner_holo_light"
+        android:track="@drawable/switch_track_holo_light"
+        android:textOn="Oui"
+        android:textOff="Non"
+        android:textColor="#ffffff"
+        android:background="#ffefaa3c"/>
+    <Switch
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:text="Spectacle"
+        android:id="@+id/show"
+        android:layout_gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:thumb="@drawable/switch_inner_holo_light"
+        android:track="@drawable/switch_track_holo_light"
+        android:textOn="Oui"
+        android:textOff="Non"
+        android:textColor="#ffffff"
+        android:background="#ffce6aac"/>
+</LinearLayout>

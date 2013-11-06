@@ -1,0 +1,42 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Black">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="Theme.Super1">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <!--<item name="android:actionBarStyle">@style/MyActionBar</item>-->
+    </style>
+
+    <!-- ActionBar styles -->
+    <style name="MyActionBar" >
+        <item name="android:background">#25242a</item>
+        <item name="android:textColor">#00abed</item>
+    </style>
+
+
+    <style name="buttonStyle">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:paddingTop">5dp</item>
+		<item name="android:paddingBottom">5dp</item>
+		<item name="android:textColor">@color/textColor</item>
+		<item name="android:background">@color/btnBackground</item>
+		<item name="android:layout_gravity">center_horizontal</item>
+	</style>
+	<style name="splashscreenBaseline">
+	    <item name="android:textColor">@color/textColor</item>
+	    <item name="android:textSize">50dp</item>
+	</style>
+
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name"></string>
+
+    <string name="menu_settings">Settings</string>
+    <string name="menu_new">New Timelapse</string>
+    <string name="menu_project">Use without account</string>
+    <string name="addrecord_alarm">Turn on alerts \?</string>
+    <string name="date">Display date \?</string>
+    <string name="hour">Display hour \?</string>
+    <string name="publish">Make the video public \?</string>
+    <string name="validate">Confirm</string>
+    <string name="addrecord"><b>+</b></string>
+    <string name="days_prompt">Choose a day</string>
+
+
+    <string name="title_activity_recorder">RecorderActivity</string>
+    <string name="Record">Recorder</string>
+    <string name="NotifyShouldTap">Tap to start recording your 1 sec video</string>
+    <string name="title_activity_sequence_options">SequenceOptionsActivity</string>
+    <string name="SequenceOptionsTitle">Title</string>
+    <string name="SequenceOptionsDate">Date</string>
+    <string name="RestartShoot">Try Again</string>
+    <string name="Validate">Validate</string>
+    <string name="Cancel">Cancel</string>
+    <string name="ShowShoot">Preview</string>
+    <string name="title_activity_player">PlayerActivity</string>
+    <string name="title_activity_timelapse">TimelapseActivity</string>
+
+</resources>
