@@ -2,3 +2,4 @@
 
 require:
     - play
+    - org.mongodb->mongo-java-driver 2.10.1
